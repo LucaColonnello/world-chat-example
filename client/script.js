@@ -1,3 +1,22 @@
+if (typeof Object.create != 'function') {
+  Object.create = (function() {
+    var Object = function() {};
+    return function (prototype) {
+      if (arguments.length > 1) {
+        throw Error('Second argument not supported');
+      }
+      if (typeof prototype != 'object') {
+        throw TypeError('Argument must be an object');
+      }
+      Object.prototype = prototype;
+      var result = new Object();
+      Object.prototype = null;
+      return result;
+    };
+  })();
+}
+
+
 // declare a module
 var app = angular.module('worldChat', ["ngRoute"]);
 
@@ -77,9 +96,11 @@ app.controller("ChatCtrl",function($scope,$location,socket,user){
 	socket.on( "newMessageSent", function( data ) {
 		$scope.messages.push( data );
 	} );
-	
 	$scope.submit = function( ){
+		if( $scope.newMessage.message == "" ) return;
+		
 		socket.emit( "postMessage", $scope.newMessage );
+		$scope.messages.push( Object.create( $scope.newMessage ) );
 		$scope.newMessage = {
 			username: $scope.user.username,
 			message: ''
