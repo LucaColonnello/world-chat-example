@@ -1,0 +1,17 @@
+		    <div class="header">
+				<div class="logo"></div>
+			</div>
+			<div class="message-list">
+				<div class="message" ng-repeat="m in messages">
+					<div class="username">
+					   {{m.username}}
+			        </div>
+					<div class="message-user">
+					   {{m.message}}
+			        </div>
+				</div>
+			</div>
+			 <form class="controls" ng-submit="submit()">
+				<input type="text" name="mess" class="mess" placeholder="scrivi un messaggio!!!" ng-model="newMessage.message">
+				<input type="submit" name="sub-mess"class="button" value="Invia">
+			 </form>

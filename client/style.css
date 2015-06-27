@@ -1,0 +1,87 @@
+*
+{
+ margin:0px;
+ padding:0px;
+ -moz-box-sizing:border-box;
+ box-sizing:border-box;
+}
+body
+{
+ font-family:arial;
+}
+.wrapper
+{
+ position:absolute;
+ top:0px;
+ left:0px;
+ right:0px;
+ bottom:0px;
+ background-color:grey;
+}
+
+.header
+{
+ position:absolute;
+ width:100%;
+ height:100px;
+ top:0px;
+ padding:15px;
+ border:1px solid black;
+}
+.logo
+{
+ position:relative;
+ width:70px;
+ height:70px;
+ border:1px solid red;
+}
+.message-list
+{
+ position:absolute;
+ width:100%;
+ top:100px;
+ bottom:30px;
+ padding:15px;
+ border:1px solid black;
+ overflow:auto;
+}
+.controls
+{
+ position:absolute;
+ width:100%;
+ height:30px;
+ bottom:0px;
+ padding:5px;
+ padding-left:10px;
+ border:1px solid black;
+}
+.mess
+{
+ position:relative;
+ right:0px;
+ left:0px;
+ width:80%;
+ float:left;
+}
+.button
+{
+ position:relative;
+ width:20%;
+ float:right;
+}
+#home-message-list
+{
+ position:relative;
+ margin:auto;
+ width:180px;
+ height:50px;
+ top:35%;
+ border:0px solid black;
+}
+.input-text
+{
+ position:relative;
+ width:100%;
+ left:0px;
+ right:0px;
+}
