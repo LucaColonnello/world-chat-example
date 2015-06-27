@@ -1,5 +1,6 @@
 var
-  app = require('express')( )
+  express = require('express')
+  app = express( )
 , server = require('http').Server(app)
 , io = require('socket.io')(server)
 , mongoose = require("mongoose")
@@ -24,12 +25,12 @@ app.use( express.static( 'client' ) );
 
 
 // prepare MessagesStore object
-var MessagesStore = new (require('../stores/MessagesStore'))( mongoose );
+var MessagesStore = new (require('./server/stores/MessagesStore'))( mongoose );
 
 
 // setup connection
 io.on('connection', function (socket) {
-  socket.emit('messages', );
+  // socket.emit('messages', );
 
   socket.on('postMessage', function (data) {
     socket.broadcast.emit('newMessageSent', data);
