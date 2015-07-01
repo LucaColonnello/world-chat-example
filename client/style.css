@@ -177,6 +177,7 @@ input[type=password] {
  height:1.8rem;
  top:35%;
  border:0 solid black;
+ text-align:center;
 }
 .input-text
 {
